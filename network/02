@@ -1,1 +1,5 @@
-ifconfig en0 | grep "inet " | awk '{print $2}'
+aaa=`ifconfig en0 | grep broadcast | awk '{print $6}'`
+echo "broadcast address: $aaa"
+ping $aaa -c2 > /dev/null
+echo "IP addresses of same subnet:"
+arp -a | awk '{if ($1 != "?") {print $2}}' | sed 's/(//' | sed 's/)//'

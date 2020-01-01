@@ -1,0 +1,6 @@
+#!/bin/sh
+
+dpkg --list
+
+# vars:
+# sudo apt list --installed

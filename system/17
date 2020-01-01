@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# ssh [-flags] user@host
+
+ssh -p 3333 sem@localhost

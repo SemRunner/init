@@ -1,2 +1,3 @@
-#TODO need print Internet6 ?
-netstat -nr | grep default | awk '{print $2}'
+aaa1=`route get default | grep "gateway" | awk '{print $2}'`
+aaa2=`netstat -nr | grep default | head -1 | awk '{print $2}'`
+echo "$aaa1 $aaa2"

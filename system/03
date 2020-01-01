@@ -1,0 +1,9 @@
+# for permanent change name
+
+# need change name to new_name in file /etc/hostname
+# and change name to new_name in file /etc/hosts
+#
+# commands:
+# sudo vi /etc/hostname
+# sudo vi /etc/hosts
+#

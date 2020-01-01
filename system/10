@@ -1,0 +1,6 @@
+#!/bin/sh
+
+lsblk
+
+#var2
+# sudo fdisk -l

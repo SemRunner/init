@@ -1,2 +1,3 @@
-a=`traceroute slash16.org`
-echo $a | grep " 1 " | awk '{print $2,$3}'
+#!/bin/sh
+ex11tmp=`traceroute slash16.org`
+echo $ex11tmp | grep " 1 " | awk '{print $2,$3}'

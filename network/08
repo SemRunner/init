@@ -1,3 +1,5 @@
 #!/bin/sh
-a=`nslookup slash16.org | grep 'Address: 13' -m1 | awk '{print $2}'`
-whois $a
+# provider of slash16.org: Amazon Technologies Inc.
+aaa=`nslookup slash16.org | grep Address | head -2 | tail -n1 | awk '{print $2}'`
+bbb=`whois $aaa | grep OrgName: | sed 's/[^ ]* *//'`
+echo "provider of slash16.org: $bbb"

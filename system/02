@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# sudo hostname new_name
+sudo hostname debianrenamed
