@@ -1,4 +1,2 @@
 #!/bin/sh
 #file with local DNS entries: /etc/hosts
-
-echo "/etc/host"
