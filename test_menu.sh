@@ -240,4 +240,5 @@ esac
 echo "\n\n\t\t\tPress any key to continue"
 read -n 1 line
 done
+
 clear
