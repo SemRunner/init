@@ -1,16 +1,6 @@
-#Создаем функции
 #!/bin/bash
 
 function init_colors {
-	# echo подсветка
-	# echo color
-	# Скрипт выводит на экран список меню
-
-	clear    # Очистка экрана
-
-	#Памятка, Таблица цветов и фонов
-	#Цвет           код       код фона
-
 	#black    30  40    \033[30m  \033[40m
 	#red      31  41    \033[31m  \033[41m
 	#green    32  42    \033[32m  \033[42m
@@ -20,30 +10,29 @@ function init_colors {
 	#cyan    36  46    \033[36m  \033[46m
 	#white    37  47    \033[37m  \033[47m
 
-	# Дополнительные свойства для текта:
-	BOLD='\033[1m'       #  ${BOLD}      # жирный шрифт (интенсивный цвет)
-	DBOLD='\033[2m'      #  ${DBOLD}    # полу яркий цвет (тёмно-серый, независимо от цвета)
-	NBOLD='\033[22m'      #  ${NBOLD}    # установить нормальную интенсивность
-	UNDERLINE='\033[4m'     #  ${UNDERLINE}  # подчеркивание
-	NUNDERLINE='\033[4m'     #  ${NUNDERLINE}  # отменить подчеркивание
-	BLINK='\033[5m'       #  ${BLINK}    # мигающий
-	NBLINK='\033[5m'       #  ${NBLINK}    # отменить мигание
-	INVERSE='\033[7m'     #  ${INVERSE}    # реверсия (знаки приобретают цвет фона, а фон -- цвет знаков)
-	NINVERSE='\033[7m'     #  ${NINVERSE}    # отменить реверсию
-	BREAK='\033[m'       #  ${BREAK}    # все атрибуты по умолчанию
-	NORMAL='\033[0m'      #  ${NORMAL}    # все атрибуты по умолчанию
+	BOLD='\033[1m'       #  ${BOLD}      # bold (intensity color)
+	DBOLD='\033[2m'      #  ${DBOLD}    # half bold (dark gray)
+	NBOLD='\033[22m'      #  ${NBOLD}    # normal intensity
+	UNDERLINE='\033[4m'     #  ${UNDERLINE}  # underline
+	NUNDERLINE='\033[4m'     #  ${NUNDERLINE}  # off underline
+	BLINK='\033[5m'       #  ${BLINK}    # blink
+	NBLINK='\033[5m'       #  ${NBLINK}    # off blink
+	INVERSE='\033[7m'     #  ${INVERSE}    # reverse (font/background)
+	NINVERSE='\033[7m'     #  ${NINVERSE}    # off reverse
+	BREAK='\033[m'       #  ${BREAK}    # all attributes by default
+	NORMAL='\033[0m'      #  ${NORMAL}    # all attributes by default
 
-	# Цвет текста:
-	BLACK='\033[0;30m'     #  ${BLACK}    # чёрный цвет знаков
-	RED='\033[0;31m'       #  ${RED}      # красный цвет знаков
-	GREEN='\033[0;32m'     #  ${GREEN}    # зелёный цвет знаков
-	YELLOW='\033[0;33m'     #  ${YELLOW}    # желтый цвет знаков
-	BLUE='\033[0;34m'       #  ${BLUE}      # синий цвет знаков
-	MAGENTA='\033[0;35m'     #  ${MAGENTA}    # фиолетовый цвет знаков
-	CYAN='\033[0;36m'       #  ${CYAN}      # цвет морской волны знаков
-	GRAY='\033[0;37m'       #  ${GRAY}      # серый цвет знаков
+	# text color:
+	BLACK='\033[0;30m'     #  ${BLACK}
+	RED='\033[0;31m'       #  ${RED}
+	GREEN='\033[0;32m'     #  ${GREEN}
+	YELLOW='\033[0;33m'     #  ${YELLOW}
+	BLUE='\033[0;34m'       #  ${BLUE}
+	MAGENTA='\033[0;35m'     #  ${MAGENTA}
+	CYAN='\033[0;36m'       #  ${CYAN}
+	GRAY='\033[0;37m'       #  ${GRAY}
 
-	# Цветом текста (жирным) (bold) :
+	# (bold) :
 	DEF='\033[0;39m'       #  ${DEF}
 	DGRAY='\033[1;30m'     #  ${DGRAY}
 	LRED='\033[1;31m'       #  ${LRED}
@@ -54,7 +43,7 @@ function init_colors {
 	LCYAN='\033[1;36m'     #  ${LCYAN}
 	WHITE='\033[1;37m'     #  ${WHITE}
 
-	# Цвет фона
+	# Background
 	BGBLACK='\033[40m'     #  ${BGBLACK}
 	BGRED='\033[41m'       #  ${BGRED}
 	BGGREEN='\033[42m'     #  ${BGGREEN}
@@ -65,7 +54,7 @@ function init_colors {
 	BGGRAY='\033[47m'     #  ${BGGRAY}
 	BGDEF='\033[49m'      #  ${BGDEF}
 
-	tput sgr0     # Возврат цвета в "нормальное" состояние
+	tput sgr0     # color to normal conditions
 }
 
 function network_run {
@@ -156,19 +145,6 @@ function network_15 {
 	network_run "15"
 }
 
-function ping_ya {
-	clear
-	ping -c 3 ya.ru
-}
-function  ifconfig {
-	clear
-	/sbin/ifconfig
-}
-function meminfo {
-	clear
-	/bin/cat /proc/meminfo
-}
-#Создаем меню
 function menu {
 	clear
 	echo
@@ -192,7 +168,7 @@ function menu {
 	echo "\t\tenter key of network task: "
 	read -n 1 option
 }
-#Используем цикл While и команду Case для создания меню.
+
 
 init_colors
 
@@ -235,7 +211,7 @@ do
 	*)
 		clear
 
-echo "Нужно выбрать раздел";;
+echo "Choose network task";;
 esac
 echo "\n\n\t\t\tPress any key to continue"
 read -n 1 line

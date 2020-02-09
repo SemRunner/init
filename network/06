@@ -1,3 +1,1 @@
-#!/bin/sh
 # file that contains IP of DNS: /etc/resolv.conf
-echo "/etc/resolv.conf"

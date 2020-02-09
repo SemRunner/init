@@ -1,3 +1,4 @@
 #!/bin/sh
-ex11tmp=`traceroute slash16.org`
-echo $ex11tmp | grep " 1 " | awk '{print $2,$3}'
+traceroute slash16.org &> test_tmp_network_11
+cat test_tmp_network_11 | grep 192.168 | tail -n1 | awk '{print "name: " $2 " IP: " $3}' | sed 's/(//' | sed 's/)//'
+rm -f test_tmp_network_11
