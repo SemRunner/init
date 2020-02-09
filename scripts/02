@@ -1,5 +1,20 @@
 #!/bin/sh
 
-USER=$1
-sudo pkill -u $USER
-sudo deluser --remove-all-files $USER
+if [ $# -eq 1 ]
+then
+	if [ "$(cat /etc/passwd | grep $1)" != "$NULL" ]
+	then
+		if [ "$(pgrep -u $1)" != "$NULL" ]
+		then
+			sudo pkill -u $1
+			sudo deluser --remove-all-files $1
+			echo "user $1 deleted"
+		else
+			echo "user $1 exist, no active"
+		fi
+	else
+		echo "user $1 not exist"
+	fi
+else
+	echo "usage: ./02 username"
+fi

@@ -1,5 +1,5 @@
 #!/bin/sh
 
-su -l $1
+# su -l $1
 
 # by ssh: ssh [-flags] user@host

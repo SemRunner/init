@@ -1,4 +1,4 @@
 #!/bin/sh
 # installed version of debian in /etc/debian_version
-
-echo "test"
+echo -n "version of debian: "
+cat /etc/debian_version

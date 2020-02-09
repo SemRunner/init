@@ -72,7 +72,7 @@ def     sort_func(symbol):
         print(symbol, symbol, symbol)
 
 def     menu():
-    cprint("Menu system:", color='red')
+    cprint("\nMENU SYSTEM:", color='red')
     keys_cases = list(cases.keys())
     keys_cases.sort(key=sort_func)
     for i in keys_cases:

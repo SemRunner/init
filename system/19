@@ -4,5 +4,3 @@ systemctl status --type service --all
 
 # vars:
 # systemctl list-units --type service --all
-# systemctl list-unit-files --type=service | grep "enabled" | awk -F'.service' '{print $1}'
-
