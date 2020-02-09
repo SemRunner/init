@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 function init_colors {
 	#black    30  40    \033[30m  \033[40m
@@ -62,14 +62,14 @@ function network_run {
 	TASK=$1
 	echo "${YELLOW}${BOLD}network $TASK${NORMAL}"
 	echo "${GREEN}task: $TASK_TEXT${NORMAL}"
-	RES=$(cat ./network/$TASK)
+	RES=$(cat ../network/$TASK)
 	echo
-	echo "${CYAN}file 01 content:${NORMAL}"
+	echo "${CYAN}file $TASK content:${NORMAL}"
 	echo "$RES"
 	echo
 	echo "${MAGENTA}Result of execute:${NORMAL}"
-	echo "${MAGENTA}${BOLD}sh ./network/$TASK${NORMAL}"
-	sh ./network/$TASK
+	echo "${MAGENTA}${BOLD}sh ../network/$TASK${NORMAL}"
+	sh ../network/$TASK
 	echo
 }
 
