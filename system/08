@@ -3,5 +3,3 @@
 # ~/.ssh/authorized_keys
 
 # $HOME/.ssh/authorized_keys
-
-sudo cat ~/.ssh/authorized_keys
