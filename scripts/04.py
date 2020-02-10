@@ -69,19 +69,17 @@ def     sort_func(symbol):
         string = "1234567890wertyuiopasdfghjkl"
         return string.index(symbol)
     except:
-        print(symbol, symbol, symbol)
+        return (len(string))
 
 def     menu():
     cprint("\nMENU SYSTEM:", color='red')
     keys_cases = list(cases.keys())
     keys_cases.sort(key=sort_func)
-    for i in keys_cases:
-        print("{}. system {}. ".format(i, cases[i][0]), end="")
-        cprint("{}".format(cases[i][1]), color="green")
+    for i_case in keys_cases:
+        print("{}. system {}. ".format(i_case, cases[i_case][0]), end="")
+        cprint("{}".format(cases[i_case][1]), color="green")
     print("q. Exit")
     print("\npress key for start system_tasks or q for quit")
-
-#menu()
 
 while (True):
     clear()
@@ -90,8 +88,6 @@ while (True):
     try:
         name, descr = cases.get(char)
         clear()
-        # p = spr.Popen("clear", shell=True)
-        # p.wait()
         system_scripts(name, descr)
     except:
         pass
